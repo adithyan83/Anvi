@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>HAPPY B'DAY Ammiiii </title>
+
+  <link rel="stylesheet" href="styles.css">
+  <style>
+  /* remove background image and use themed background */
+  body::before{ content:""; position:fixed; inset:0; background:linear-gradient(180deg,#fff,#ffeef6); opacity:0.0; z-index:-1 }
+  .container{ max-width:900px; margin:0 auto; padding:28px 18px; text-align:center; background:linear-gradient(180deg,#ffffffee,#ffeef8); border-radius:16px }
+    h1{ font-family:'Dancing Script',cursive; font-size:44px; color:var(--rose); text-shadow:0 6px 18px #c6285a33 }
+    p{ color:#d33376; font-size:18px }
+    .link-button a{ background:linear-gradient(135deg,var(--rose),var(--rose-deep)); padding:12px 22px; border-radius:12px; color:#fff; text-decoration:none; font-weight:700 }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1 class="love-title">Happy Birthday, Anviiii ❤️</h1>
+    <p class="love-sub">This letter is written with love and all the memories we share.</p>
+
+    <div class="letter-area" contenteditable="true" aria-label="Write your letter here">
+      <p> Anviiii,</p>
+      <p>Happy birthday my gurlll It’s been 1,095 days since we started this journey together three whole years of love, laughter, late-night talks, and everything in between. Even though it’s been four months since I last saw you. I still remember that last moment, the way you smiled and pinched my cheeks before we said goodbye it replays in my mind every time I close my eyes.
+Being away from you has taught me how strong what we have really is. Distance can’t touch the way my heart feels when I think of you. You’re not just my girlfriend  and my favorite part of every day.
+I wish I could be there right now to hold you close, to see your smile in person, to celebrate you the way you deserve. But until that day comes again, I’m sending you all my love, wrapped in every word of this message.
+Happy birthday, Mariyammm. I love you more than words will ever be able to say — and I can’t wait for the next time I get to say it to your face. ❤️
+      </p>
+    </div>
+
+    <div style="margin-top:14px;display:flex;gap:10px;justify-content:center;align-items:center;">
+  <a href="pic.html" class="videos-link">Click Here</a>
+      <button id="clearBtn" class="videos-link" style="background:transparent;color:var(--rose-deep);border:1px solid var(--rose-deep);">Clear</button>
+    </div>
+  </div>
+
+  <!-- floating hearts -->
+  <div class="hearts" aria-hidden="true">
+    <span>❤</span><span>❤</span><span>❤</span><span>❤</span><span>❤</span>
+  </div>
+
+  <!-- music toggle -->
+  <button class="music-toggle" aria-label="Play music">♪</button>
+  <audio id="bgm" src="love.mp3" preload="none"></audio>
+
+  <script>
+    document.getElementById('clearBtn').addEventListener('click', ()=>{
+      const a = document.querySelector('.letter-area');
+      if(confirm('Clear the letter content?')) a.innerHTML = '<p>Dear Anviiii,</p><p></p>';
+    });
+  </script>
+
+</body>
+</html>
