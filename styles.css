@@ -304,4 +304,47 @@
     * { transition: none !important; animation: none !important }
     .videos-link::after, .btn::after { display: none }
   }
+
+  /* Accessible focus ring for keyboard users */
+  :focus {
+    outline: none; /* prefer custom focus-visible */
+  }
+  :focus-visible {
+    box-shadow: 0 0 0 4px rgba(198,40,90,0.18), 0 10px 28px rgba(198,40,90,0.14);
+    transform: translateY(-6px) scale(1.02);
+  }
+
+  /* make sure our link-buttons show a visible ring when focused via keyboard */
+  .videos-link:focus-visible,
+  .btn:focus-visible,
+  .music-toggle:focus-visible,
+  button:focus-visible {
+    box-shadow: 0 0 0 4px rgba(255,255,255,0.12), 0 0 0 6px rgba(198,40,90,0.20);
+    border-radius: 12px;
+  }
+
+  /* Mobile-specific improvements */
+  @media (max-width: 720px) {
+    /* Increase tap target sizes */
+    .videos-link, .btn, .music-toggle, button {
+      padding: 14px 20px !important;
+      border-radius: 14px;
+      font-size: 16px;
+      min-height: 48px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Reduce heavy shadows and motion to save battery and reduce jank */
+    .btn, .videos-link, .music-toggle { box-shadow: 0 6px 18px rgba(0,0,0,0.12) !important }
+    .hearts span{ animation-duration: 10s; opacity: .35; font-size: clamp(12px, 4vw, 20px) }
+
+    /* Slightly smaller transform values on hover */
+    .btn:hover, .videos-link:hover, .music-toggle:hover { transform: translateY(-4px) scale(1.02) }
+
+    /* Make gallery images more efficient on mobile */
+    .gallery{ gap:12px }
+    .flip-card{ aspect-ratio: 3/2 }
+  }
   
